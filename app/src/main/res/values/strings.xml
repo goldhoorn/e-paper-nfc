@@ -1,13 +1,20 @@
 <resources>
-    <string name="app_name">NFC E-Ink Writer</string>
+    <string name="app_name">E-Paper NFC</string>
     <string name="pick_image_file_cta_text">Load Image</string>
     <string name="cta_new_text_invite">New - Text</string>
     <string name="cta_new_graphic_invite">New - Graphic</string>
     <string name="currDisplaySizeDefaultText">Select a Display Size</string>
     <string name="flashButtonText">Flash / Program</string>
     <string name="image_preview_content_description">Image to Flash Preview</string>
-    <string name="hold_phone_to_flash_text">Hold Phone Against Eink Display</string>
-    <string name="imagePreviewText">Bitmap Preview:</string>
+    <string name="hold_phone_to_flash_text">Hold the upper back of the phone (camera area) on the display coil</string>
+    <string name="hold_phone_hint">S24 Ultra NFC is near the cameras, not the center. Leave a 2–5 mm gap and do not move for ~30 seconds. A field drop wipes the image buffer — the panel has no battery.</string>
+    <string name="imagePreviewText">What the display will show</string>
     <string name="pleaseWaitWhileFlashingText">Please wait...</string>
+    <string name="render_mode_label">Render mode</string>
+    <string name="invert_label">Invert black / white</string>
+    <string name="threshold_label">Threshold: 128</string>
+    <string name="threshold_label_fmt">Threshold: %d</string>
+    <string name="soften_label">Soften (Weichzeichner): 2</string>
+    <string name="soften_label_fmt">Soften (Weichzeichner): %d</string>
     <string name="reflash_cta_text">Reflash Last Image</string>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -129,9 +130,14 @@ class MainActivity : AppCompatActivity() {
         val reFlashImagePreview: ImageView = findViewById(R.id.reflashButtonImage)
         if (lastGeneratedFile.exists()) {
             mHasReFlashableImage = true
-            // Need to set null first, or else Android will cache previous image
-            reFlashImagePreview.setImageURI(null)
-            reFlashImagePreview.setImageURI(Uri.fromFile((lastGeneratedFile)))
+            val src = BitmapFactory.decodeFile(lastGeneratedFile.absolutePath)
+            if (src != null) {
+                val processed = ImageRenderer.render(src, Preferences(this).getRenderSettings())
+                reFlashImagePreview.setImageBitmap(processed)
+            } else {
+                reFlashImagePreview.setImageURI(null)
+                reFlashImagePreview.setImageURI(Uri.fromFile(lastGeneratedFile))
+            }
         } else {
             // Grey out button
             mReFlashButton.setCardBackgroundColor(Color.DKGRAY)

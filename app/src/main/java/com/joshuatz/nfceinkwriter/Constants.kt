@@ -39,6 +39,10 @@ object Constants {
 object PrefKeys {
     var DisplaySize = "Display_Size"
     var GeneratedImgPath = "Generated_Image_Path"
+    var RenderMode = "Render_Mode"
+    var Invert = "Render_Invert"
+    var Threshold = "Render_Threshold"
+    var Soften = "Render_Soften"
 }
 
 object IntentKeys {

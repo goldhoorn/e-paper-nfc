@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+# WaveShare official bytecode — do not republish (no OSI license)
+app/libs/**/NFC.jar

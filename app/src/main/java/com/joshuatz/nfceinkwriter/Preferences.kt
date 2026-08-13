@@ -35,6 +35,32 @@ class Preferences {
         return ScreenSizesInPixels[screenSize]!!
     }
 
+    fun getRenderSettings(): RenderSettings {
+        val prefs = getPreferences()
+        return RenderSettings(
+            mode = RenderMode.fromKey(prefs.getString(PreferenceKeys.RenderMode, RenderMode.THRESHOLD.key)),
+            invert = prefs.getBoolean(PreferenceKeys.Invert, false),
+            threshold = prefs.getInt(PreferenceKeys.Threshold, 128),
+            soften = prefs.getInt(PreferenceKeys.Soften, 2)
+        )
+    }
+
+    fun setRenderMode(mode: RenderMode) {
+        getPreferences().edit().putString(PreferenceKeys.RenderMode, mode.key).apply()
+    }
+
+    fun setInvert(invert: Boolean) {
+        getPreferences().edit().putBoolean(PreferenceKeys.Invert, invert).apply()
+    }
+
+    fun setThreshold(threshold: Int) {
+        getPreferences().edit().putInt(PreferenceKeys.Threshold, threshold.coerceIn(0, 255)).apply()
+    }
+
+    fun setSoften(soften: Int) {
+        getPreferences().edit().putInt(PreferenceKeys.Soften, soften.coerceIn(0, ImageRenderer.MAX_SOFTEN)).apply()
+    }
+
     fun showScreenSizePicker(callback: (String) -> Void?) {
         val alertBuilder = AlertDialog.Builder(this.mActivity)
         alertBuilder
