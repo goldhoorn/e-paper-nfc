@@ -31,6 +31,20 @@ Compared with [joshuatz/nfc-epaper-writer](https://github.com/joshuatz/nfc-epape
 
 The original `WaveShareHandler` that reflected into the package-private JAR is gone.
 
+## Download the APK
+
+Prebuilt APKs are on **[GitHub Releases](https://github.com/goldhoorn/e-paper-nfc/releases)** (not GitHub Pages — Releases is the right place for binaries).
+
+Latest: [E-Paper-NFC-1.6-debug.apk](https://github.com/goldhoorn/e-paper-nfc/releases/download/v1.6/E-Paper-NFC-1.6-debug.apk)
+
+This is a **debug-signed sideload** build (same signing we use while developing). It is not on Play Store.
+
+1. On the phone: allow installs from the browser / Files app (*Install unknown apps*).
+2. Open the release link, download the `.apk`, tap it to install.
+3. Android 11+ will warn that the app is from outside Play — that is expected.
+
+**Legal:** MIT + Apache-2.0 dependencies allow redistributing this binary. The APK does **not** contain WaveShare’s `NFC.jar`. Keep the [LICENSE](LICENSE) and [THIRD_PARTY.md](THIRD_PARTY.md) with any copy you share.
+
 ## Getting the SDKs
 
 You need the **Google Android SDK** to build. The **WaveShare NFC JAR** is **optional** and **not used** by this fork.
